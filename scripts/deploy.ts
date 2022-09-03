@@ -1,7 +1,6 @@
 import { ethers } from "hardhat";
-import {} from "ethers"
 
-async function main() {
+export async function main() {
 
   const FACTORY: string = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
   const ROUTER: string = "0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D";
@@ -14,6 +13,7 @@ async function main() {
   await uniswapLiquidityManager.deployed();
 
   console.log(`UniswapLiquidityManager deployed to ${uniswapLiquidityManager.address}`);
+  return uniswapLiquidityManager.address;
 }
 
 // We recommend this pattern to be able to use async/await everywhere

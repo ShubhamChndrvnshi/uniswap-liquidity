@@ -21,7 +21,9 @@ contract UniswapLiquidityManager {
         uint256 _amountB
     ) external {
         IERC20(_tokenA).transferFrom(msg.sender, address(this), _amountA);
+        console.log("Transfered tokenA");
         IERC20(_tokenB).transferFrom(msg.sender, address(this), _amountB);
+        console.log("Transfered tokenB");
 
         IERC20(_tokenA).approve(address(router), _amountA);
         IERC20(_tokenB).approve(address(router), _amountB);
